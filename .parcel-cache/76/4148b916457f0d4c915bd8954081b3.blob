@@ -2127,8 +2127,6 @@ function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!priva
 
 function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
 
-function _classPrivateMethodGet(receiver, privateSet, fn) { if (!privateSet.has(receiver)) { throw new TypeError("attempted to get private field on non-instance"); } return fn; }
-
 var _parentElement = /*#__PURE__*/new WeakMap();
 
 var _data = /*#__PURE__*/new WeakMap();
@@ -2166,10 +2164,7 @@ class RecipeView {
 
   render(data) {
     this.data = data;
-
-    const markup = this._generateMarkup();
-
-    _classPrivateMethodGet(this, _clear, _clear2).call(this);
+    const markup = this._generateMarkup; // this.#clear;
 
     _classPrivateFieldGet(this, _parentElement).insertAdjacentHTML('afterbegin', markup);
   }

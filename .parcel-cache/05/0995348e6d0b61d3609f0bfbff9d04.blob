@@ -2166,10 +2166,9 @@ class RecipeView {
 
   render(data) {
     this.data = data;
+    const markup = this._generateMarkup;
 
-    const markup = this._generateMarkup();
-
-    _classPrivateMethodGet(this, _clear, _clear2).call(this);
+    _classPrivateMethodGet(this, _clear, _clear2);
 
     _classPrivateFieldGet(this, _parentElement).insertAdjacentHTML('afterbegin', markup);
   }
